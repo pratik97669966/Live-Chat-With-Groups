@@ -14,7 +14,7 @@
 	align-items: center;
 }
 
-main {
+.mobile {
 	height: 100%;
 	width: 100%;
 	@include flexCenter();
@@ -242,10 +242,6 @@ main {
 }
 
 .main-container {
-	display: flex;
-}
-
-.mobile {
 	display: flex;
 }
 
