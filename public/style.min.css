@@ -229,7 +229,7 @@ main .chat-container .right form button {
   color: #fff;
   font-weight: 600;
   outline: none;
-  border: none;
+  border: 2;
   border-radius: 10px;
 }
 .main-container {
