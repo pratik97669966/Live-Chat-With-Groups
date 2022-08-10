@@ -33,9 +33,9 @@ main .chat-container {
 }
 main .chat-container .left {
   height: 100%;
-  width: 34%;
-  padding: 15px;
-  margin-right: 20px;
+  width: 0%;
+  padding: 0px;
+  margin-right: 0px;
   background-color: #dedede;
   -webkit-box-shadow: rgba(83, 83, 85, 0.1) 0px 0px 50px 0px;
   box-shadow: rgba(83, 83, 85, 0.1) 0px 0px 50px 0px;
@@ -52,7 +52,7 @@ main .chat-container .left {
   border-radius: 20px;
 }
 main .chat-container .left .info {
-  height: 87%;
+  height: 0%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,7 +81,7 @@ main .chat-container .left #user-list {
   height: 100%;
   overflow-y: scroll;
   padding: 0 !important;
-  
+  border-radius: 10px;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -94,7 +94,7 @@ main .chat-container .left #user-list .user-name {
   background-color: #000;
   color: #fff;
   font-weight: 400;
-  
+  border-radius: 10px;
   width: 100%;
 }
 main .chat-container .left a {
@@ -117,7 +117,7 @@ main .chat-container .left a button {
   font-weight: 600;
   outline: none;
   border: none;
-  
+  border-radius: 10px;
   -webkit-transition-duration: 200ms;
   transition-duration: 200ms;
 }
@@ -130,8 +130,8 @@ main .chat-container .left a button:active {
 }
 main .chat-container .right {
   height: 100%;
-  width: 65%;
-  padding-right: 5px;
+  width: 100%;
+  padding-right: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -218,7 +218,7 @@ main .chat-container .right form input {
   font-size: 1rem;
   outline: none;
   border: none;
-  
+  border-radius: 10px;
 }
 main .chat-container .right form button {
   margin-left: 20px;
@@ -230,7 +230,7 @@ main .chat-container .right form button {
   font-weight: 600;
   outline: none;
   border: none;
-  
+  border-radius: 10px;
 }
 .main-container {
   display: -webkit-box;
