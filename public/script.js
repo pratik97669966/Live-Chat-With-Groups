@@ -13,9 +13,7 @@ socket.emit('user-joined', {
 	user: userName,
 	room: roomName,
 });
-socket.on('broadcast', (number) => {
-	usersCounter.innerHTML = number;
-  });
+
 // document.getElementById('room-name').textContent = roomName;
 
 form.addEventListener('submit', e => {
@@ -43,7 +41,9 @@ socket.on('message-sent', message => {
 socket.on('user-status-message', message => {
 	createMessage(message, `left`, `Open Bot`);
 });
-
+socket.on('broadcast', (number) => {
+	usersCounter.innerHTML = number;
+  });
 // socket.on('user-list-update', cb => {
 // 	renderUserList(cb);
 // });
