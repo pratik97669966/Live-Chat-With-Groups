@@ -18,7 +18,7 @@ usersList = [];
 //Socket.io event handler functions
 io.on('connection', socket => {
 	console.log('user connected');
-
+	usersNum += 1;
 	socket.on('user-joined', cb => {
 		socket.join(cb.room);
 		io.emit('broadcast', `Online: ${usersNum}`);
