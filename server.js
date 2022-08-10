@@ -40,9 +40,12 @@ io.on('connection', socket => {
 
 	socket.on('disconnect', () => {
 		console.log('user disconnected');
+		usersNum -= 1;
+		io.emit('broadcast', `Online: ${usersNum}`);
+
 		let userLeft = usersList.find(e => e.id == socket.id);
 		if (userLeft) {
-			io.emit('broadcast', `Online: ${usersNum}`);
+			
 			io.emit('user-disconnected', users[socket.id]);
             delete users[socket.id];
 			usersList = usersList.filter(e => {
