@@ -41,7 +41,7 @@ io.on('connection', socket => {
 	socket.on('disconnect', () => {
 		console.log('user disconnected');
 		usersNum -= 1;
-		io.emit('broadcast', `Online: ${usersNum}`);
+		
 
 		let userLeft = usersList.find(e => e.id == socket.id);
 		if (userLeft) {
@@ -55,7 +55,7 @@ io.on('connection', socket => {
 			let currentRoomUsers = usersList.filter(e => {
 				return e.room == userLeft.room;
 			});
-
+			io.emit('broadcast', `Online: ${usersNum}`);
 			io.to(userLeft.room).emit('user-list-update', currentRoomUsers);
 			socket.to(userLeft.room).emit('user-status-message', `'${userLeft.name}' left`);
 		} else {
