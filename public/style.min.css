@@ -28,7 +28,6 @@ main .chat-container {
   display: flex;
   -webkit-box-shadow: rgba(115, 114, 121, 0.15) 0px 48px 100px 0px;
   box-shadow: rgba(115, 114, 121, 0.15) 0px 48px 100px 0px;
-  border-radius: 30px;
   overflow: hidden;
 }
 main .chat-container .left {
