@@ -2,21 +2,14 @@ var socket = io();
 
 const form = document.getElementById('form');
 const input = document.getElementById('input');
-var userName="";
-// do {
-// 	var userName = prompt('Enter your name');
-// } while (userName == '' || userName == null);
-
-// do {
-// 	var roomName = prompt('Enter a room name');
-// } while (roomName == '' || roomName == null);
-
-//Event emit functions
 const params = new URLSearchParams(window.location.search);
-      userName = params.get('userName');
+var userName = params.get('userName');
+var roomName ="open chat";
+//Event emit functions
+
 socket.emit('user-joined', {
 	user: userName,
-	room: "open chat",
+	room: roomName,
 });
 
 document.getElementById('room-name').textContent = roomName;
