@@ -37,7 +37,7 @@ socket.on('message-sent', message => {
 });
 
 socket.on('user-status-message', message => {
-	createMessage(message, `left`, `Socket Bot`);
+	createMessage(message, `left`, `Open Bot`);
 });
 
 socket.on('user-list-update', cb => {
