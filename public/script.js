@@ -13,7 +13,9 @@ socket.emit('user-joined', {
 	user: userName,
 	room: roomName,
 });
-
+socket.on('broadcast', (number) => {
+	usersCounter.innerHTML = number;
+  });
 // document.getElementById('room-name').textContent = roomName;
 
 form.addEventListener('submit', e => {

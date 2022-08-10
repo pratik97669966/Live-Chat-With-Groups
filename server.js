@@ -21,6 +21,7 @@ io.on('connection', socket => {
 
 	socket.on('user-joined', cb => {
 		socket.join(cb.room);
+		io.emit('broadcast', `Online: ${usersNum}`);
 		socket.to(cb.room).emit('user-status-message', `A new user '${cb.user}' has joined`);
 
 		let currentUser = new User(socket.id, cb.user, cb.room);
@@ -36,14 +37,14 @@ io.on('connection', socket => {
 	socket.on('message-sent', message => {
 		socket.to(message.room).emit('message-sent', message);
 	});
-	socket.on('broadcast', (number) => {
-		usersCounter.innerHTML = number;
-	  });
+
 	socket.on('disconnect', () => {
 		console.log('user disconnected');
 		let userLeft = usersList.find(e => e.id == socket.id);
-
 		if (userLeft) {
+			io.emit('broadcast', `Online: ${usersNum}`);
+			io.emit('user-disconnected', users[socket.id]);
+            delete users[socket.id];
 			usersList = usersList.filter(e => {
 				return e.id != socket.id;
 			});
