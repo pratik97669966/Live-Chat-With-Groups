@@ -196,7 +196,7 @@ main .chat-container .right #messages .time {
   margin-left: 20px;
 }
 main .chat-container .right #messages .message {
-  color: #dedede;
+  color: #fff;
   font-size: 0.9rem;
   font-weight: 600;
   word-wrap: break-word;
