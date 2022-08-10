@@ -15,7 +15,7 @@
 }
 
 main {
-	height: 100vh;
+	height: 100px;
 	width: 100%;
 	@include flexCenter();
 
@@ -245,9 +245,9 @@ main {
 	display: flex;
 }
 
-.mobile {
-	display: flex;
-}
+// .mobile {
+// 	display: flex;
+// }
 
 // @media screen and (max-width: 900px) {
 // 	main {
