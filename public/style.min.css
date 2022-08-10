@@ -215,12 +215,13 @@ main .chat-container .right form input {
   -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   font-size: 1rem;
+  color: #000;
   outline: none;
   border: none;
   border-radius: 10px;
 }
 main .chat-container .right form button {
-  margin-left: 20px;
+  margin-left: 0px;
   padding: 0 15px;
   background-color: #000;
   -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
