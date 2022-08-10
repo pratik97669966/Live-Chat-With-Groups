@@ -12,7 +12,7 @@ socket.emit('user-joined', {
 	room: roomName,
 });
 
-document.getElementById('room-name').textContent = roomName;
+// document.getElementById('room-name').textContent = roomName;
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
@@ -40,9 +40,9 @@ socket.on('user-status-message', message => {
 	createMessage(message, `left`, `Open Bot`);
 });
 
-socket.on('user-list-update', cb => {
-	renderUserList(cb);
-});
+// socket.on('user-list-update', cb => {
+// 	renderUserList(cb);
+// });
 
 //
 //
