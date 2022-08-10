@@ -37,7 +37,7 @@ main {
 			width: 34%;
 			padding: 15px;
 			margin-right: 20px;
-			background-color: #dedede;
+			background-color: #fff;
 			box-shadow: rgba(83, 83, 85, 0.1) 0px 0px 50px 0px;
 
 			display: flex;
@@ -214,7 +214,6 @@ main {
 				input {
 					width: 100%;
 					padding: 12px 15px;
-					color: #dedede;
 					box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 					font-size: 1rem;
 					outline: none;
@@ -223,7 +222,7 @@ main {
 				}
 
 				button {
-					margin-left: 4px;
+					margin-left: 0px;
 					padding: 0 15px;
 					background-color: #000;
 					box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
