@@ -35,7 +35,7 @@ main .chat-container .left {
   width: 0%;
   padding: 0px;
   margin-right: 0px;
-  background-color: #dedede;
+  background-color: #fff;
   -webkit-box-shadow: rgba(83, 83, 85, 0.1) 0px 0px 50px 0px;
   box-shadow: rgba(83, 83, 85, 0.1) 0px 0px 50px 0px;
   display: -webkit-box;
@@ -196,7 +196,7 @@ main .chat-container .right #messages .time {
   margin-left: 20px;
 }
 main .chat-container .right #messages .message {
-  color: #fff;
+  color: #dedede;
   font-size: 0.9rem;
   font-weight: 600;
   word-wrap: break-word;
