@@ -59,6 +59,7 @@ io.on('connection', socket => {
 			socket.broadcast.emit('user-disconnected', users[socket.id]);
 			io.to(userLeft.room).emit('user-list-update', currentRoomUsers);
 			socket.to(userLeft.room).emit('user-status-message', `'${userLeft.name}' left`);
+			delete users[socket.id];
 		} else {
 			console.log('Error: User does not exist (Server may have been restarted)');
 		}
