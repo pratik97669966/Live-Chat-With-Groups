@@ -273,5 +273,6 @@ main .chat-container .right form button {
   .header h1 {
     position: relative;
     top: 18px;
+    font-size: 20px;
     left: 10px;
   }
