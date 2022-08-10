@@ -36,7 +36,9 @@ io.on('connection', socket => {
 	socket.on('message-sent', message => {
 		socket.to(message.room).emit('message-sent', message);
 	});
-
+	socket.on('broadcast', (number) => {
+		usersCounter.innerHTML = number;
+	  });
 	socket.on('disconnect', () => {
 		console.log('user disconnected');
 		let userLeft = usersList.find(e => e.id == socket.id);

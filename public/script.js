@@ -5,6 +5,8 @@ const input = document.getElementById('input');
 const params = new URLSearchParams(window.location.search);
 var userName = params.get('userName');
 var roomName ="open chat";
+const usersCounter = document.getElementById('users-counter');
+
 //Event emit functions
 
 socket.emit('user-joined', {

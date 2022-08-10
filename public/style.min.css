@@ -236,3 +236,14 @@ main .chat-container .right form button {
   display: -ms-flexbox;
   display: flex;
 }
+#users-counter {
+    font-size: 18px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: var(--second-color);
+    color: var(--text-color);
+ }
