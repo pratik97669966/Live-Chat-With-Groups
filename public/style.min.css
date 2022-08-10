@@ -81,7 +81,7 @@ main .chat-container .left #user-list {
   height: 100%;
   overflow-y: scroll;
   padding: 0 !important;
-  border-radius: 10px;
+  
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -94,7 +94,7 @@ main .chat-container .left #user-list .user-name {
   background-color: #000;
   color: #fff;
   font-weight: 400;
-  border-radius: 10px;
+  
   width: 100%;
 }
 main .chat-container .left a {
@@ -117,7 +117,7 @@ main .chat-container .left a button {
   font-weight: 600;
   outline: none;
   border: none;
-  border-radius: 10px;
+  
   -webkit-transition-duration: 200ms;
   transition-duration: 200ms;
 }
@@ -218,7 +218,7 @@ main .chat-container .right form input {
   font-size: 1rem;
   outline: none;
   border: none;
-  border-radius: 10px;
+  
 }
 main .chat-container .right form button {
   margin-left: 20px;
@@ -230,7 +230,7 @@ main .chat-container .right form button {
   font-weight: 600;
   outline: none;
   border: none;
-  border-radius: 10px;
+  
 }
 .main-container {
   display: -webkit-box;
