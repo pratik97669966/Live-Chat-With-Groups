@@ -51,7 +51,7 @@ io.on('connection', socket => {
 			});
 
 			io.to(userLeft.room).emit('user-list-update', currentRoomUsers);
-			socket.to(userLeft.room).emit('user-status-message', `User '${userLeft.name}' has left the room`);
+			socket.to(userLeft.room).emit('user-status-message', `'${userLeft.name}' left`);
 		} else {
 			console.log('Error: User does not exist (Server may have been restarted)');
 		}
