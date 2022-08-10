@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html');
 });
-
+const users = {};
 usersList = [];
 
 //Socket.io event handler functions
@@ -59,7 +59,7 @@ io.on('connection', socket => {
 			socket.broadcast.emit('user-disconnected', users[socket.id]);
 			io.to(userLeft.room).emit('user-list-update', currentRoomUsers);
 			socket.to(userLeft.room).emit('user-status-message', `'${userLeft.name}' left`);
-			delete users[socket.id];
+			
 		} else {
 			console.log('Error: User does not exist (Server may have been restarted)');
 		}
