@@ -164,7 +164,18 @@ main .chat-container .right #messages::-webkit-scrollbar {
 main .chat-container .right #messages .message-wrapper {
   width: 100%;
 }
-main .chat-container .right #messages .message-left,
+main .chat-container .right #messages .message-left{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 400px;
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: #4AC959;
+    border-radius: 15px;
+    /* -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
+}
 main .chat-container .right #messages .message-right {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -172,10 +183,10 @@ main .chat-container .right #messages .message-right {
   max-width: 400px;
   margin: 10px;
   padding: 10px 15px;
-  background-color: #000;
+  background-color: #455A64;
   border-radius: 15px;
-  -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  /* -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
 }
 main .chat-container .right #messages .message-right {
   float: right;
