@@ -27,7 +27,7 @@ form.addEventListener('submit', e => {
 		createMessage(input.value, 'right', 'Me');
 		input.value = '';
 	} else {
-		alert('Enter something in the text field');
+		// alert('Enter something in the text field');
 	}
 });
 

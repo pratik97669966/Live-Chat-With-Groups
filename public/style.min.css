@@ -270,9 +270,7 @@ main .chat-container .right form button {
     background: #555;
   }
   
-  .header h1 {
-    position: relative;
-    top: 18px;
-    font-size: 20px;
-    left: 10px;
-  }
+  .option1 { 
+    display: inline-block; /* show on the same line */ 
+    padding-right: 5px; /* small gap on the right of each header */ 
+  } 
