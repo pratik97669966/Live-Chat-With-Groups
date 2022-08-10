@@ -172,7 +172,9 @@ main .chat-container .right #messages .message-left{
     margin: 10px;
     padding: 10px 15px;
     background-color: #455A64;
-    border-radius: 15px;
+    border-top-left-radius:25px;
+  border-top-right-radius:25px;
+  border-bottom-right-radius:25px;
     /* -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
 }
@@ -184,7 +186,9 @@ main .chat-container .right #messages .message-right {
   margin: 10px;
   padding: 10px 15px;
   background-color: #128C7E;
-  border-radius: 15px;
+  border-top-left-radius:25px;
+  border-top-right-radius:25px;
+  border-bottom-left-radius:25px;
   /* -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
 }
