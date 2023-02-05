@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>Praten | Real Time Chatting 💬</title>
-		<link rel="stylesheet" href="/style.min.css" />
-		<link rel="icon" href="/favicon.ico" />
-	</head>
-	<body>
-		<main>
-			<div class="chat-container">
-				<div class="left">
-					<!-- <div class="info">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Q UP Chat 💬</title>
+	<link rel="stylesheet" href="/style.min.css" />
+	<link rel="icon" href="/favicon.ico" />
+</head>
+
+<body>
+	<main>
+		<div class="chat-container">
+			<div class="left">
+				<!-- <div class="info">
 						<div class="title-1">Room</div>
 						<div id="room-name"></div>
 						<div class="title-2">Participants</div>
 						<div id="user-list"></div>
 					</div> -->
-					<!-- <a href="/">
+				<!-- <a href="/">
 						<button>Clear chat</button>
 					</a> -->
-				</div>
-				<div class="right">
-					<div class="header">
-						<img src="https://play-lh.googleusercontent.com/RTJBZnhKz_Q_iZK-kVR62LGmyX0Ehv0hht-AABmgb0t2nIN5ZjP8lJ1D3zt79XpqDg=w240-h480-rw" alt="logo" />
-						<h1>Openchat</h1>
-					  </div>
-					<span class="tag is-success is-light" id="users-counter">Online: Loading...</span>
-					<div id="messages"></div>
-					<form id="form" action="" autocomplete="off">
-						<input id="input" type="text" autofocus />
-						<button type="submit">Send</button>
-					</form>
-				</div>
 			</div>
-		</main>
-		<!-- <div class="mobile">
+			<div class="right">
+				<div class="header">
+					<img src="https://play-lh.googleusercontent.com/RTJBZnhKz_Q_iZK-kVR62LGmyX0Ehv0hht-AABmgb0t2nIN5ZjP8lJ1D3zt79XpqDg=w240-h480-rw"
+						alt="logo" />
+					<h1>Q UP APP</h1>
+				</div>
+				<span class="tag is-success is-light" id="users-counter">Online: Loading...</span>
+				<div id="messages"></div>
+				<form id="form" action="" autocomplete="off">
+					<input id="input" type="text" autofocus />
+					<button type="submit">Send</button>
+				</form>
+			</div>
+		</div>
+	</main>
+	<!-- <div class="mobile">
 			<div class="container">
 				<p class="txt">This application is not compatible on mobile devices, please view on a desktop</p>
 			</div>
 		</div> -->
 
-		<script src="/socket.io/socket.io.js"></script>
-		<script src="/moment.js"></script>
-		<script src="/script.js"></script>
-	</body>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/moment.js"></script>
+	<script src="/script.js"></script>
+</body>
+
 </html>

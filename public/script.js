@@ -4,7 +4,7 @@ const form = document.getElementById('form');
 const input = document.getElementById('input');
 const params = new URLSearchParams(window.location.search);
 var userName = params.get('userName');
-var roomName ="open chat";
+var roomName = params.get('roomName');
 const usersCounter = document.getElementById('users-counter');
 
 //Event emit functions
@@ -13,8 +13,6 @@ socket.emit('user-joined', {
 	user: userName,
 	room: roomName,
 });
-
-// document.getElementById('room-name').textContent = roomName;
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
@@ -39,18 +37,11 @@ socket.on('message-sent', message => {
 });
 
 socket.on('user-status-message', message => {
-	createMessage(message, `left`, `Open Bot`);
+	createMessage(message, `left`, `Q UP Bot`);
 });
 socket.on('broadcast', (number) => {
 	usersCounter.innerHTML = number;
-  });
-// socket.on('user-list-update', cb => {
-// 	renderUserList(cb);
-// });
-
-//
-//
-//Middleware
+});
 
 function renderUserList(list) {
 	let roomUsers = document.getElementById('user-list');
