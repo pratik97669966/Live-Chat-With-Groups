@@ -3,7 +3,7 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8047;
 let usersNum = 0;
 http.listen(PORT, () => console.log(`server started at port: ${PORT}`));
 
@@ -41,13 +41,13 @@ io.on('connection', socket => {
 	socket.on('disconnect', () => {
 		console.log('user disconnected');
 		usersNum -= 1;
-		
+
 
 		let userLeft = usersList.find(e => e.id == socket.id);
 		if (userLeft) {
-			
+
 			io.emit('user-disconnected', users[socket.id]);
-            delete users[socket.id];
+			delete users[socket.id];
 			usersList = usersList.filter(e => {
 				return e.id != socket.id;
 			});
@@ -59,7 +59,7 @@ io.on('connection', socket => {
 			socket.broadcast.emit('user-disconnected', users[socket.id]);
 			io.to(userLeft.room).emit('user-list-update', currentRoomUsers);
 			socket.to(userLeft.room).emit('user-status-message', `'${userLeft.name}' left`);
-			
+
 		} else {
 			console.log('Error: User does not exist (Server may have been restarted)');
 		}
