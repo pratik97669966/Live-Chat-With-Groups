@@ -3,19 +3,9 @@ var socket = io();
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const params = new URLSearchParams(window.location.search);
-var userName = params.get('userName');
-var roomName = params.get('roomName');
+var userName = params.get('userName') || 'Guest'; // Default to 'Guest' if not provided
+var roomName = params.get('roomName') || 'General'; // Default to 'General' if not provided
 const usersCounter = document.getElementById('users-counter');
-
-// Prompt user if username or room is missing in URL
-if (!userName || !roomName) {
-    userName = prompt('Enter your username:') || 'Guest';
-    roomName = prompt('Enter the room name:') || 'General';
-
-    // Optionally, update the URL for consistency
-    const newUrl = `${window.location.origin}?userName=${encodeURIComponent(userName)}&roomName=${encodeURIComponent(roomName)}`;
-    window.history.pushState({}, '', newUrl);
-}
 
 // Emit the 'user-joined' event with the username and room
 socket.emit('user-joined', {
