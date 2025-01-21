@@ -3,9 +3,16 @@ var socket = io();
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const params = new URLSearchParams(window.location.search);
-var userName = params.get('userName');
+// Read the username from the URL parameter
+const urlParams = new URLSearchParams(window.location.search);
+let userName = urlParams.get('username');  // Assuming the URL contains '?username=someName'
 var roomName = params.get('roomName');
 const usersCounter = document.getElementById('users-counter');
+
+// If the username is not present or is invalid, use a default name or handle as needed
+if (!userName || userName.trim() === '') {
+    userName = 'OPEN_TALK_ADMIN';  // Example without username in url
+}
 
 //Event emit functions
 
