@@ -13,6 +13,7 @@ const usersCounter = document.getElementById('users-counter');
 if (userName  === null || userName == '') {
     userName = 'OPEN_TALK_ADMIN';  // Example without username in url
 }
+else {
 
 //Event emit functions
 
@@ -20,7 +21,7 @@ socket.emit('user-joined', {
 	user: userName,
 	room: roomName,
 });
-
+}
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	if (input.value) {
