@@ -10,7 +10,7 @@ var roomName = params.get('roomName');
 const usersCounter = document.getElementById('users-counter');
 
 // If the username is not present or is invalid, use a default name or handle as needed
-if (!userName || userName.trim() === '') {
+if (userName  === null || userName == '') {
     userName = 'OPEN_TALK_ADMIN';  // Example without username in url
 }
 
