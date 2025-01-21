@@ -3,12 +3,9 @@ var socket = io();
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const params = new URLSearchParams(window.location.search);
-// Read the username from the URL parameter
-const urlParams = new URLSearchParams(window.location.search);
-let userName = urlParams.get('username');  // Assuming the URL contains '?username=someName'
+var userName = params.get('userName');
 var roomName = params.get('roomName');
 const usersCounter = document.getElementById('users-counter');
-
 
 //Event emit functions
 
