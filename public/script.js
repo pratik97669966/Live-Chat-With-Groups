@@ -37,7 +37,7 @@ socket.on('message-sent', message => {
 });
 
 socket.on('user-status-message', message => {
-	createMessage(message, `left`, `Q UP Bot`);
+	createMessage(message, `left`, `Open Talk Bot`);
 });
 socket.on('broadcast', (number) => {
 	usersCounter.innerHTML = number;
