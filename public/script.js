@@ -7,66 +7,80 @@ var userName = params.get('userName');
 var roomName = params.get('roomName');
 const usersCounter = document.getElementById('users-counter');
 
-//Event emit functions
+// Prompt user if username or room is missing in URL
+if (!userName || !roomName) {
+    userName = prompt('Enter your username:') || 'Guest';
+    roomName = prompt('Enter the room name:') || 'General';
 
-socket.emit('user-joined', {
-	user: userName,
-	room: roomName,
-});
-
-form.addEventListener('submit', e => {
-	e.preventDefault();
-	if (input.value) {
-		socket.emit('message-sent', {
-			user: userName,
-			message: input.value,
-			room: roomName,
-		});
-		createMessage(input.value, 'right', 'Me');
-		input.value = '';
-	} else {
-		// alert('Enter something in the text field');
-	}
-});
-
-//
-//
-//Server event handlers
-socket.on('message-sent', message => {
-	createMessage(message.message, 'left', message.user);
-});
-
-socket.on('user-status-message', message => {
-	createMessage(message, `left`, `Open Talk Bot`);
-});
-socket.on('broadcast', (number) => {
-	usersCounter.innerHTML = number;
-});
-
-function renderUserList(list) {
-	let roomUsers = document.getElementById('user-list');
-	roomUsers.innerHTML = '';
-
-	list.forEach(e => {
-		let user = document.createElement('div');
-		user.textContent = e.name;
-		user.classList.add('user-name');
-		roomUsers.appendChild(user);
-	});
+    // Optionally, update the URL for consistency
+    const newUrl = `${window.location.origin}?userName=${encodeURIComponent(userName)}&roomName=${encodeURIComponent(roomName)}`;
+    window.history.pushState({}, '', newUrl);
 }
 
+// Emit the 'user-joined' event with the username and room
+socket.emit('user-joined', {
+    user: userName,
+    room: roomName,
+});
+
+// Handle form submission for sending messages
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (input.value) {
+        socket.emit('message-sent', {
+            user: userName,
+            message: input.value,
+            room: roomName,
+        });
+        createMessage(input.value, 'right', 'Me');
+        input.value = '';
+    } else {
+        alert('Please enter a message before sending.');
+    }
+});
+
+// Server event handlers
+socket.on('message-sent', (message) => {
+    createMessage(message.message, 'left', message.user);
+});
+
+socket.on('user-status-message', (message) => {
+    createMessage(message, 'left', 'Open Talk Bot');
+});
+
+socket.on('broadcast', (number) => {
+    usersCounter.innerHTML = number;
+});
+
+// Render the list of users in the room
+function renderUserList(list) {
+    let roomUsers = document.getElementById('user-list');
+    roomUsers.innerHTML = '';
+
+    list.forEach((e) => {
+        let user = document.createElement('div');
+        user.textContent = e.name;
+        user.classList.add('user-name');
+        roomUsers.appendChild(user);
+    });
+}
+
+// Function to create a chat message
 function createMessage(msg, dir, userName) {
-	const messages = document.getElementById('messages');
+    const messages = document.getElementById('messages');
 
-	let item = document.createElement('div');
-	item.innerHTML = `
-		<div class="message-${dir}">
-			<div class="user-name"><div>${userName}</div> <div class="time">${moment().format('hh:mm A')}</div></div>
-			<div class="message">${msg}</div>
-		</div>
+    let item = document.createElement('div');
+    item.innerHTML = `
+        <div class="message-${dir}">
+            <div class="user-name">
+                <div>${userName}</div>
+                <div class="time">${moment().format('hh:mm A')}</div>
+            </div>
+            <div class="message">${msg}</div>
+        </div>
     `;
-	item.classList.add('message-wrapper');
-	messages.appendChild(item);
+    item.classList.add('message-wrapper');
+    messages.appendChild(item);
 
-	messages.scrollTop += 1000;
+    messages.scrollTop += 1000; // Scroll to the bottom for new messages
 }
