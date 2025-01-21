@@ -9,9 +9,9 @@ let userName = urlParams.get('username');  // Assuming the URL contains '?userna
 var roomName = params.get('roomName');
 const usersCounter = document.getElementById('users-counter');
 
-// If the username is not present or is invalid, use a default name or handle as needed
-if (userName  <> null || userName <> '') {
-    userName = 'OPEN_TALK_ADMIN';  // Example without username in url
+// If the username is not present or is invalid, use a default name
+if (!userName || userName.trim() === '') {
+    userName = 'OPEN_TALK_ADMIN'; // Example default username
 }
 
 //Event emit functions
