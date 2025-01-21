@@ -3,7 +3,8 @@ var socket = io();
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const params = new URLSearchParams(window.location.search);
-var userName = params.get('userName') || 'Guest'; // Default to 'Guest' if not provided
+var userName = Params.get('username');  // Assuming the URL contains '?username=someName'
+let userName = params.get('userName') || 'OPEN_TALK_ADMIN'; // Default to 'ADMIN' if not provided
 var roomName = params.get('roomName') || 'General'; // Default to 'General' if not provided
 const usersCounter = document.getElementById('users-counter');
 
