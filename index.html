@@ -14,23 +14,26 @@
 	<main>
 		<div class="chat-container">
 			<div class="left">
-				<!-- <div class="info">
-						<div class="title-1">Room</div>
-						<div id="room-name"></div>
-						<div class="title-2">Participants</div>
-						<div id="user-list"></div>
-					</div> -->
-				<!-- <a href="/">
-						<button>Clear chat</button>
-					</a> -->
+
 			</div>
 			<div class="right">
 				<div class="header">
 					<img src="https://play-lh.googleusercontent.com/RTJBZnhKz_Q_iZK-kVR62LGmyX0Ehv0hht-AABmgb0t2nIN5ZjP8lJ1D3zt79XpqDg=w240-h480-rw"
 						alt="logo" />
-					<h1>Open Talk</h1>
+				
+					
+					<!-- Dark Mode and Online Users Button at the top -->
+					<div class="d-flex justify-content-between mt-2">
+						<!-- Dark Mode Toggle Switch -->
+						<label class="dark-mode-switch">
+							<input type="checkbox" id="dark-mode-toggle">
+							<span class="slider"></span>
+						</label>
+						<!-- Online Users Counter -->
+						<span class="tag is-success is-light" id="users-counter">Online: Loading...</span>
+					</div>
+					
 				</div>
-				<span class="tag is-success is-light" id="users-counter">Online: Loading...</span>
 				<div id="messages"></div>
 				<form id="form" action="" autocomplete="off">
 					<input id="input" type="text" autofocus />
