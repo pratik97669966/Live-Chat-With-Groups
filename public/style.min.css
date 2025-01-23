@@ -237,7 +237,6 @@ main .chat-container .right form input {
   
 }
 main .chat-container .right form button {
-  position: fixed;
   margin-left: 0px;
   padding: 0 15px;
   background-color: #000;
