@@ -55,27 +55,11 @@ function renderUserList(list) {
     });
 }
 
-// Dark Mode Toggle Switch
+// Dark Mode Toggle
 const darkModeButton = document.getElementById('dark-mode-toggle');
-
-// Event listener to toggle dark mode
-darkModeButton.addEventListener('change', () => {
-    // Toggle dark-mode class on the body when the switch is checked
-    if (darkModeButton.checked) {
-        document.body.classList.add('dark-mode');
-        localStorage.setItem('dark-mode', 'enabled');
-    } else {
-        document.body.classList.remove('dark-mode');
-        localStorage.setItem('dark-mode', 'disabled');
-    }
+darkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
 });
-
-// Check if dark mode was previously enabled from localStorage
-if (localStorage.getItem('dark-mode') === 'enabled') {
-    document.body.classList.add('dark-mode');
-    darkModeButton.checked = true;
-}
-
 
 
 // Function to create a chat message
