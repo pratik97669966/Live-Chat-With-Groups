@@ -234,8 +234,10 @@ main .chat-container .right form input {
   outline: none;
   border: 2;
   border-radius: 10px;
+  
 }
 main .chat-container .right form button {
+  position: fixed;
   margin-left: 0px;
   padding: 0 15px;
   background-color: #000;
@@ -276,3 +278,76 @@ main .chat-container .right form button {
     top: 18px;
     left: 10px;
   }
+
+ /* Dark Mode Styling */
+body.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+body.dark-mode .chat-container {
+  background-color: #444;
+}
+
+body.dark-mode .message-left,
+body.dark-mode .message-right {
+  background-color: #555;
+}
+
+body.dark-mode .message-wrapper {
+  color: white;
+}
+
+
+/* Toggle Switch Style */
+
+body.dark-mode {
+  background-color: #121212;
+  color: #141313;
+}
+#messages-container.dark-mode {
+  background-color: #1e1e1e;
+}
+
+
+
+.dark-mode-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.dark-mode-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 25px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: #2196F3;
+}
+input:checked + .slider:before {
+    transform: translateX(25px);
+}
