@@ -9,6 +9,10 @@ http.listen(PORT, () => console.log(`server started at port: ${PORT}`));
 
 //Express setup functions
 app.use(express.static('public'));
+// Add the /test route
+app.get('/test', (req, res) => {
+	res.status(200).send('welcome');
+});
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html');
 });
